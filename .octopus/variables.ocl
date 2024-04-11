@@ -6,10 +6,6 @@ variable "Orders_Octo_Test.Server.IP" {
     value "52.191.250.143:5432" {}
 }
 
-variable "Orders_Octo_Test.Build.DBName" {
-    value "Orders_Octo_Test_Build" {}
-}
-
 variable "GitHub.Repo.ID" {
     value "kathikelRG/#{RepoName}" {}
 }
@@ -24,4 +20,8 @@ variable "Flyway.Package.ID" {
 
 variable "Orders_Octo_Test.Server.User" {
     value "postgres" {}
+}
+
+variable "Orders_Octo_Test.Build.DBName" {
+    value "orders_octo_test_build" {}
 }
