@@ -14,7 +14,7 @@ step "flyway-info" {
             Flyway.Database.User = "#{Orders_Octo_Test.Server.User}"
             Flyway.Database.User.Password = "#{Orders_Octo_Test.Server.Password}"
             Flyway.License.Key = "#{Flyway.LicenseKey}"
-            Flyway.Package.Value = "{\"PackageId\":\"Orders_Octo_Test.Database\",\"FeedId\":\"octopus-server-built-in\"}"
+            Flyway.Package.Value = "{\"PackageId\":\"orders_octo_test-1\",\"FeedId\":\"octopus-server-built-in\"}"
             Flyway.Target.Url = "#{Orders_Octo_Test.Build.DBName}"
             Octopus.Action.Template.Id = "ActionTemplates-41"
             Octopus.Action.Template.Version = "14"
@@ -30,7 +30,7 @@ step "flyway-info" {
         packages "Flyway.Package.Value" {
             acquisition_location = "Server"
             feed = "octopus-server-built-in"
-            package_id = "Orders_Octo_Test.Database"
+            package_id = "orders_octo_test-1"
             properties = {
                 Extract = "True"
                 PackageParameterName = "Flyway.Package.Value"
