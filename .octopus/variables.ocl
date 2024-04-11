@@ -25,7 +25,3 @@ variable "Flyway.LicenseKey" {
 variable "Flyway.Package.ID" {
     value "1.1.1" {}
 }
-
-variable "Flyway.Package.Value" {
-    value "Orders_Octo_Test" {}
-}
