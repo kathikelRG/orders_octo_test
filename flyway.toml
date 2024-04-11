@@ -1,0 +1,30 @@
+databaseType = "PostgreSql"
+id = "dba6d5e0-a805-4b4a-8f6d-70d3f01f3458"
+name = "Orders_Octo_Test"
+
+[flyway]
+locations = [ "filesystem:migrations" ]
+mixed = true
+outOfOrder = true
+validateMigrationNaming = true
+baselineVersion = "001_20240411170423"
+baselineOnMigrate = true
+
+  [flyway.check]
+  majorTolerance = 0
+
+[flywayDesktop]
+developmentEnvironment = "development"
+schemaModel = "schema-model"
+shadowEnvironment = "shadow"
+
+[redgateCompare]
+filterFile = "filter.rgf"
+
+[redgateCompare.postgresql.options.ignores]
+ignoreNewlinesInTextObjects = "off"
+
+[environments.Prod]
+url = "jdbc:postgresql://localhost:5432/orders_octo_test_prod"
+schemas = [ "public" ]
+displayName = "Prod"
