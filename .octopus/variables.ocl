@@ -2,10 +2,6 @@ variable "RepoName" {
     value "Orders_Oct_Test" {}
 }
 
-variable "Orders_Octo_Test.Server.User" {
-    value "myadmin" {}
-}
-
 variable "Orders_Octo_Test.Server.IP" {
     value "52.191.250.143:5432" {}
 }
@@ -24,4 +20,8 @@ variable "Flyway.LicenseKey" {
 
 variable "Flyway.Package.ID" {
     value "1.1.1" {}
+}
+
+variable "Orders_Octo_Test.Server.User" {
+    value "postgres" {}
 }
