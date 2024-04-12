@@ -39,3 +39,46 @@ step "flyway-info" {
         }
     }
 }
+
+step "flyway-migrate" {
+    name = "Flyway Migrate"
+
+    action {
+        properties = {
+            Flyway.Additional.Arguments = "-baselineOnMigrate=\"true\""
+            Flyway.Authentication.Method = "usernamepassword"
+            Flyway.Command.BaseLineOnMigrate = "false"
+            Flyway.Command.FailOnDrift = "true"
+            Flyway.Command.OutOfOrder = "false"
+            Flyway.Command.Schemas = "public"
+            Flyway.Command.SkipExecutingMigrations = "false"
+            Flyway.Command.Target = "latest"
+            Flyway.Command.Value = "migrate"
+            Flyway.Database.User = "#{Orders_Octo_Test.Server.User}"
+            Flyway.Database.User.Password = "#{Orders_Octo_Test.Server.Password}"
+            Flyway.License.Key = "#{Flyway.LicenseKey}"
+            Flyway.Package.Value = "{\"PackageId\":\"#{GitHub.Repo.ID}\",\"FeedId\":\"feed-github\"}"
+            Flyway.Target.Url = "jdbc:postgresql://#{Orders_Octo_Test.Server.IP}/#{Orders_Octo_Test.Build.DBName}"
+            Octopus.Action.Template.Id = "ActionTemplates-41"
+            Octopus.Action.Template.Version = "14"
+            OctopusUseBundledTooling = "False"
+        }
+        worker_pool = "hosted-ubuntu"
+
+        container {
+            feed = "feed-docker"
+            image = "#{Flyway.Container}"
+        }
+
+        packages "Flyway.Package.Value" {
+            acquisition_location = "Server"
+            feed = "feed-github"
+            package_id = "#{GitHub.Repo.ID}"
+            properties = {
+                Extract = "True"
+                PackageParameterName = "Flyway.Package.Value"
+                SelectionMode = "deferred"
+            }
+        }
+    }
+}
