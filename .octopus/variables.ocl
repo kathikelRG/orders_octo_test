@@ -50,8 +50,5 @@ variable "Project.Test.URL" {
 }
 
 variable "Project.Build.URL" {
-    value "jdbc:postgresql://52.191.250.148:5432/orders_octo_test_build" {
-        environment = ["build"]
-        role = ["sql-server-database"]
-    }
+    value "jdbc:postgresql://52.191.250.148:5432/orders_octo_test_build" {}
 }
