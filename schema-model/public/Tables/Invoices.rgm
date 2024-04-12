@@ -1,0 +1,21 @@
+table "public"."Invoices" {
+  primaryKey = {
+    columns = [
+      "invoiceID"
+    ]
+    name = "Invoices_pkey"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "invoiceID" {
+      type = int2vector
+      null = NOT NULL
+    }
+    column "amt" {
+      type = money
+      null = NOT NULL
+    }
+  )
+}
+
