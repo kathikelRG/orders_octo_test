@@ -14,10 +14,6 @@ variable "Project.Server.User" {
     value "postgres" {}
 }
 
-variable "Project.Check.DBName" {
-    value "orders_octo_test_check" {}
-}
-
 variable "Project.Build.DBName" {
     value "orders_octo_test_build" {
         environment = ["build"]
@@ -28,6 +24,27 @@ variable "Project.Build.DBName" {
 variable "Project.Build.URL" {
     value "jdbc:postgresql://#{Project.Server.IP}/#{Project.Build.DBName}" {
         environment = ["build"]
+        role = ["sql-server-database"]
+    }
+}
+
+variable "Project.Test.DBName" {
+    value "orders_octo_test_test" {
+        environment = ["test"]
+        role = ["sql-server-database"]
+    }
+}
+
+variable "Project.Check.URL" {
+    value "jdbc:postgresql://#{Project.Server.IP}/#{Project.Check.DBName}" {
+        environment = ["check"]
+        role = ["sql-server-database"]
+    }
+}
+
+variable "Project.Check.DBName" {
+    value "orders_octo_test_check" {
+        environment = ["check"]
         role = ["sql-server-database"]
     }
 }
