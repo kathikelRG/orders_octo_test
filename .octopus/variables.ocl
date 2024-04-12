@@ -48,3 +48,10 @@ variable "Project.Check.DBName" {
         role = ["sql-server-database"]
     }
 }
+
+variable "Project.Test.URL" {
+    value "jdbc:postgresql://#{Project.Server.IP}/#{Project.Test.DBName}" {
+        environment = ["test"]
+        role = ["sql-server-database"]
+    }
+}
