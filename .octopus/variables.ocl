@@ -19,5 +19,5 @@ variable "Flyway.Container" {
 }
 
 variable "Orders_Octo_Test.Build.URL" {
-    value "jdbc:postgresql://localhost:5432/orders_octo_test_build" {}
+    value "jdbc:postgresql://52.191.250.148:5432/orders_octo_test_build" {}
 }
