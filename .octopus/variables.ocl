@@ -1,7 +1,3 @@
-variable "RepoName" {
-    value "Orders_Oct_Test" {}
-}
-
 variable "GitHub.Repo.ID" {
     value "kathikelRG/#{RepoName}" {}
 }
@@ -24,4 +20,8 @@ variable "Orders_Octo_Test.Build.DBName" {
 
 variable "Orders_Octo_Test.Server.IP" {
     value "52.191.250.148:5432" {}
+}
+
+variable "RepoName" {
+    value "orders_octo_test" {}
 }
