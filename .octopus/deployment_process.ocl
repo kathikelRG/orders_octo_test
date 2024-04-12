@@ -100,7 +100,7 @@ step "flyway-clean-build" {
             Flyway.Database.User.Password = "#{Orders_Octo_Test.Server.Password}"
             Flyway.License.Key = "#{Flyway.LicenseKey}"
             Flyway.Package.Value = "{\"PackageId\":\"#{GitHub.Repo.ID}\",\"FeedId\":\"feed-github\"}"
-            Flyway.Target.Url = "jdbc:postrgresql://#{Orders_Octo_Test.Server.IP}/#{Orders_Octo_Test.Build.DBName}"
+            Flyway.Target.Url = "#{Orders_Octo_Test.Build.URL}"
             Octopus.Action.Template.Id = "ActionTemplates-41"
             Octopus.Action.Template.Version = "14"
             OctopusUseBundledTooling = "False"
