@@ -17,3 +17,7 @@ variable "GitHub.Repo.ID" {
 variable "Flyway.Container" {
     value "octopuslabs/flyway-workertools:latest" {}
 }
+
+variable "Orders_Octo_Test.Build.URL" {
+    value "jdbc:postgresql://localhost:5432/orders_octo_test_build" {}
+}
