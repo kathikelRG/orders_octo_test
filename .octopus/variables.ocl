@@ -10,14 +10,14 @@ variable "Project.Build.DBName" {
     value "orders_octo_test_build" {}
 }
 
-variable "Project.Build.URL" {
-    value "jdbc:postgresql://#{Orders_Octo_Test.Server.IP}/#{Project.Build.DBName}" {}
-}
-
 variable "Project.Server.IP" {
     value "52.191.250.148:5432" {}
 }
 
 variable "Project.Server.User" {
     value "postgres" {}
+}
+
+variable "Project.Build.URL" {
+    value "jdbc:postgresql://#{Project.Server.IP}/#{Project.Build.DBName}" {}
 }
