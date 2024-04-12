@@ -14,41 +14,26 @@ variable "Project.Server.User" {
     value "postgres" {}
 }
 
+variable "Project.Build.URL" {
+    value "jdbc:postgresql://52.191.250.148:5432/orders_octo_test_build" {}
+}
+
 variable "Project.Build.DBName" {
-    value "orders_octo_test_build" {
-        environment = ["build"]
-        role = ["sql-server-database"]
-    }
-}
-
-variable "Project.Test.DBName" {
-    value "orders_octo_test_test" {
-        environment = ["test"]
-        role = ["sql-server-database"]
-    }
-}
-
-variable "Project.Check.URL" {
-    value "jdbc:postgresql://#{Project.Server.IP}/#{Project.Check.DBName}" {
-        environment = ["check"]
-        role = ["sql-server-database"]
-    }
+    value "orders_octo_test_build" {}
 }
 
 variable "Project.Check.DBName" {
-    value "orders_octo_test_check" {
-        environment = ["check"]
-        role = ["sql-server-database"]
-    }
+    value "orders_octo_test_check" {}
+}
+
+variable "Project.Check.URL" {
+    value "jdbc:postgresql://#{Project.Server.IP}/#{Project.Check.DBName}" {}
+}
+
+variable "Project.Test.DBName" {
+    value "orders_octo_test_test" {}
 }
 
 variable "Project.Test.URL" {
-    value "jdbc:postgresql://#{Project.Server.IP}/#{Project.Test.DBName}" {
-        environment = ["test"]
-        role = ["sql-server-database"]
-    }
-}
-
-variable "Project.Build.URL" {
-    value "jdbc:postgresql://52.191.250.148:5432/orders_octo_test_build" {}
+    value "jdbc:postgresql://#{Project.Server.IP}/#{Project.Test.DBName}" {}
 }
