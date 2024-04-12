@@ -13,3 +13,7 @@ variable "Orders_Octo_Test.Server.IP" {
 variable "GitHub.Repo.ID" {
     value "kathikelRG/orders_octo_test" {}
 }
+
+variable "Flyway.Container" {
+    value "octopuslabs/flyway-workertools:latest" {}
+}
