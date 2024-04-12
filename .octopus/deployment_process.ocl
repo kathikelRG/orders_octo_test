@@ -88,6 +88,7 @@ step "flyway-clean-build" {
 
     action {
         properties = {
+            Flyway.Additional.Arguments = "-cleanDisabled=false"
             Flyway.Authentication.Method = "usernamepassword"
             Flyway.Command.BaseLineOnMigrate = "false"
             Flyway.Command.FailOnDrift = "true"
