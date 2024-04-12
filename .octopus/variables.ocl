@@ -14,10 +14,6 @@ variable "Orders_Octo_Test.Server.IP" {
     value "52.191.250.148:5432" {}
 }
 
-variable "RepoName" {
-    value "orders_octo_test" {}
-}
-
 variable "GitHub.Repo.ID" {
     value "kathikelRG/orders_octo_test" {}
 }
