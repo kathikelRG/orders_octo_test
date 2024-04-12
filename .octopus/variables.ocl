@@ -1,15 +1,3 @@
-variable "Orders_Octo_Test.Server.User" {
-    value "postgres" {}
-}
-
-variable "Orders_Octo_Test.Build.DBName" {
-    value "orders_octo_test_build" {}
-}
-
-variable "Orders_Octo_Test.Server.IP" {
-    value "52.191.250.148:5432" {}
-}
-
 variable "GitHub.Repo.ID" {
     value "kathikelRG/orders_octo_test" {}
 }
@@ -18,6 +6,18 @@ variable "Flyway.Container" {
     value "octopuslabs/flyway-workertools:latest" {}
 }
 
-variable "Orders_Octo_Test.Build.URL" {
-    value "jdbc:postgresql://#{Orders_Octo_Test.Server.IP}/#{Orders_Octo_Test.Build.DBName}" {}
+variable "Project.Build.DBName" {
+    value "orders_octo_test_build" {}
+}
+
+variable "Project.Build.URL" {
+    value "jdbc:postgresql://#{Orders_Octo_Test.Server.IP}/#{Project.Build.DBName}" {}
+}
+
+variable "Project.Server.IP" {
+    value "52.191.250.148:5432" {}
+}
+
+variable "Project.Server.User" {
+    value "postgres" {}
 }
