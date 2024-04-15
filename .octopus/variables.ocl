@@ -37,3 +37,11 @@ variable "Project.Test.DBName" {
 variable "Project.Test.URL" {
     value "jdbc:postgresql://#{Project.Server.IP}/#{Project.Test.DBName}" {}
 }
+
+variable "Project.Prod.DBName" {
+    value "orders_octo_test_prod" {}
+}
+
+variable "Project.Prod.URL" {
+    value "jdbc:postgresql://#{Project.Server.IP}/#{Project.Prod.DBName}" {}
+}
