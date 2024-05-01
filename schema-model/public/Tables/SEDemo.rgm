@@ -1,0 +1,17 @@
+table "public"."SEDemo" {
+  primaryKey = {
+    columns = [
+      "demoID"
+    ]
+    name = "SEDemo_pkey"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "demoID" {
+      type = int4range
+      null = NOT NULL
+    }
+  )
+}
+
