@@ -1,0 +1,9 @@
+table "public"."noprimary" {
+  owner = postgres
+  columns = (
+    column "col1" {
+      type = bigint
+    }
+  )
+}
+
